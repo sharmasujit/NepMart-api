@@ -59,7 +59,7 @@ async(req,res)=>{
 })
 
 //update quantity
-router.put("/item/update/quantity",isBuyer,validateReqBody(updateQuantitySchema),
+router.put("/cart/item/update-quantity",isBuyer,validateReqBody(updateQuantitySchema),
 async(req,res)=>{
 
     //extract validate data from req.body

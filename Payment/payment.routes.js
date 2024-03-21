@@ -18,8 +18,12 @@ async(req,res)=>{
     try {
         //initiate a payment
         const response=await axios.post("https://a.khalti.com/api/v2/epayment/initiate/",{
-            return_url: "https://nep-mart.netlify.app/payment/khalti/success/",
-            website_url: "https://nep-mart.netlify.app/",
+            return_url: "https://nep-mart.netlify.app/payment/khalti/success/", //using host url
+            //return_url: "https:/localhost:5173/payment/khalti/success/", //use when using localhost
+
+            website_url: "https://nep-mart.netlify.app",//using host url
+            //website_url: "https:/localhost:5173",  //use when using localhost
+
             amount: +amount * 100,  //convert into paisa
             purchase_order_id: uuid(),
             purchase_order_name: "items",
